@@ -1,0 +1,15 @@
+@import '../../../GlobalStyles/mixins';
+
+.header{
+    grid-area: header;
+    height: 64px;
+    background-color: var(--header-color);
+    .navigate-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include breakpoint-down(small) {
+
+        }
+    }
+}

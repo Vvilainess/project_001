@@ -1,0 +1,26 @@
+.side-bar {
+    position: relative;
+    grid-area: sidebar;
+    width: calc(var(--default-layout-sidebar-height) + 9px);
+    background-color: var(--black);
+    display: flex ;
+    flex-direction: column;
+    min-height: 0;
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-top: 24px;
+        width: 100%;
+        .brand-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .icon {
+                color: var(--white);
+                font-size: 32px;
+            }
+        }
+    }
+
+}
