@@ -9,7 +9,7 @@ const SearchInput = () => {
     const [inputValue, setInputValue] = useState("");
     useEffect(() => {}, []);
     return (
-        <>
+        <div className={cx("form-wrapper")}>
             <form action="#" autoComplete="off" className={cx("form")}>
                 <input
                     value={inputValue}
@@ -21,13 +21,11 @@ const SearchInput = () => {
                     placeholder="Artists, songs, or podcasts"
                     className={cx("form-input")}
                 />
-                <AiOutlineSearch className="absolute top-0 left-0 h-full text-2xl ml-3" />
-                {inputValue && (
-                    <IoMdClose className="absolute top-0 right-0 h-full text-2xl mr-3 cursor-pointer" />
-                )}
+                <AiOutlineSearch className={cx("search-icon")} />
+                {inputValue && <IoMdClose className={cx("close-button")} />}
                 <div className=""></div>
             </form>
-        </>
+        </div>
     );
 };
 

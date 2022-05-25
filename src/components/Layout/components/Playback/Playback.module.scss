@@ -1,4 +1,7 @@
 .playback {
+    position: relative;
     grid-area: playback;
     height: var(--default-layout-playback-height);
+    background-color: var(--background-playback);
+    z-index: 3;
 }

@@ -1,7 +1,6 @@
 .layout {
     display: grid;
     grid-template-areas:
-        "sidebar header"
         "sidebar main-view"
         "playback playback";
     grid-template-columns: auto 1fr;
@@ -10,7 +9,7 @@
     min-height: 100%;
     position: relative;
     width: 100%;
-    .main-view{
+    .main-view {
         grid-area: main-view;
         overflow: hidden;
         width: 100%;

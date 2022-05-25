@@ -14,7 +14,7 @@ function App() {
                                 key={idx}
                                 path={route.path}
                                 element={
-                                    <Layout headerInput={route.header}>
+                                    <Layout>
                                         <Pages />
                                     </Layout>
                                 }

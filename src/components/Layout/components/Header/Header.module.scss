@@ -1,15 +1,86 @@
-@import '../../../GlobalStyles/mixins';
+@import "../../../GlobalStyles/mixins";
 
-.header{
+.header {
     grid-area: header;
     height: 64px;
     background-color: var(--header-color);
-    .navigate-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .wrapper {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        @include breakpoint-down(small) {
-
+        flex: 1;
+        padding: 0 24px;
+        .navigate {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .navigate-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+                line-height: 0;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                background-color: var(--navigate-button);
+                &:not(:last-child) {
+                    margin-right: 16px;
+                }
+                .icon {
+                    color: var(--white);
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+            @include breakpoint-down(small) {
+            }
+        }
+        .user-button {
+            position: relative;
+            color: var(--white);
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            border-radius: 28px;
+            -webkit-border-radius: 28px;
+            -moz-border-radius: 28px;
+            -ms-border-radius: 28px;
+            -o-border-radius: 28px;
+            background-color: rgba(0, 0, 0, 0.7);
+            img {
+                height: 28px;
+                width: 28px;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+            }
+            .user-name {
+                box-sizing: border-box;
+                font-family: var(--font-family), Helvetica, Arial, sans-serif;
+                -webkit-tap-highlight-color: transparent;
+                font-size: 0.8125rem;
+                line-height: 1rem;
+                color: inherit;
+                font-weight: 700;
+                max-width: 110px;
+                overflow: hidden;
+                pointer-events: none;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding: 3px;
+                z-index: 10;
+            }
         }
     }
 }
