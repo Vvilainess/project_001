@@ -3,6 +3,7 @@
 
 :root {
     --primary: #fe2c55;
+    --secondary: #b3b3b3;
     --black: #000;
     --white: #fff;
     --text-color: #161823;
@@ -14,7 +15,7 @@
 
     // Default layout
     --default-layout-header-height: 60px;
-    --default-layout-sidebar-height: 222px;
+    --default-layout-sidebar-width: 222px;
     --default-layout-playback-height: 90px;
 }
 

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./SideBar.module.scss";
 import className from "classnames/bind";
-import { BsSpotify, BsSearch } from "react-icons/bs";
-import { AiOutlineHome } from "react-icons/ai";
+import { BsSpotify, BsSearch, BsPlusSquare } from "react-icons/bs";
+import { AiOutlineHome, AiFillHeart } from "react-icons/ai";
 import { BiLibrary } from "react-icons/bi";
+import { MdDownloadForOffline } from "react-icons/md";
 
 const cx = className.bind(styles);
 const menu = [
@@ -23,20 +24,15 @@ const menu = [
         title: "Your Library",
         icon: <BiLibrary />,
     },
-    {
-        path: "/playlist/:id",
-        title: "Create Playlist",
-        icon: AiOutlineHome,
-    },
-    {
-        path: "/collection/tracks",
-        title: "Liked Songs",
-        icon: AiOutlineHome,
-    },
 ];
 const Sidebar = () => {
+    const playlistEl = useRef(null);
+    const sideBarEl = useRef(null);
+    useEffect(() => {
+        console.log(sideBarEl);
+    }, []);
     return (
-        <div className={cx("side-bar")}>
+        <div className={cx("side-bar")} ref={sideBarEl}>
             <div className={cx("wrapper")}>
                 <Link to="/" className={cx("brand-logo")}>
                     <BsSpotify className={cx("icon")} />
@@ -58,6 +54,94 @@ const Sidebar = () => {
                             );
                         })}
                     </ul>
+                </div>
+                <div className={cx("feature")}>
+                    <div className={cx("wrapper")}>
+                        <Link
+                            to="/collection/:id"
+                            className={cx("feature-link")}
+                        >
+                            <BsPlusSquare className={cx("icon")} />
+                            <span>Create Playlist</span>
+                        </Link>
+                        <Link
+                            to="/collection/tracks"
+                            className={cx("feature-link")}
+                        >
+                            <AiFillHeart className={cx("icon")} />
+                            <span>Liked Songs</span>
+                        </Link>
+                    </div>
+                </div>
+                <div className={cx("playlist")}>
+                    <div className={cx("wrapper")} ref={playlistEl}>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                        <Link to="/" className={cx("playlist-item")}>
+                            Playlist Item
+                        </Link>
+                    </div>
+                </div>
+                <div className={cx("install")}>
+                    <Link to="/">
+                        <MdDownloadForOffline />
+                        <span>Install App</span>
+                    </Link>
                 </div>
             </div>
         </div>
