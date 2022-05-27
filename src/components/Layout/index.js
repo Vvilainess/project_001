@@ -9,7 +9,9 @@ const Layout = ({ children }) => {
     return (
         <div className={cx("layout")}>
             <SideBar />
-            <div className={cx("main-view")}>{children}</div>
+            <div className={cx("main-view")}>
+                <div className={cx("main-view-container")}>{children}</div>
+            </div>
             <Playback />
         </div>
     );

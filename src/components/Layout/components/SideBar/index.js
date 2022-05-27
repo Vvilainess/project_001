@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./SideBar.module.scss";
 import className from "classnames/bind";
@@ -31,14 +31,16 @@ const Sidebar = () => {
     const sideBarLogoEl = useRef(null);
     const sideBarMenuEl = useRef(null);
     const sideBarFeatEl = useRef(null);
+    const installButtonEL = useRef(null);
+    const [playlistHeight, setPlaylistHeight] = useState(null);
     useEffect(() => {
-        playlistEl.current.maxHeight =
+        let height =
             sideBarEl.current.offsetHeight -
             sideBarLogoEl.current.offsetHeight -
             sideBarMenuEl.current.offsetHeight -
-            sideBarFeatEl.current.offsetHeight +
-            "px";
-        console.log(playlistEl.current.maxHeight);
+            sideBarFeatEl.current.offsetHeight -
+            installButtonEL.current.offsetHeight;
+        setPlaylistHeight(height);
     }, []);
     return (
         <div className={cx("side-bar")} ref={sideBarEl}>
@@ -82,8 +84,12 @@ const Sidebar = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={cx("playlist")}>
-                    <div className={cx("wrapper")} ref={playlistEl} style={{}}>
+                <div
+                    className={cx("playlist")}
+                    style={{ maxHeight: playlistHeight - 38 - 9 }}
+                    ref={playlistEl}
+                >
+                    <div className={cx("wrapper")}>
                         <Link to="/" className={cx("playlist-item")}>
                             Playlist Item
                         </Link>
@@ -146,9 +152,9 @@ const Sidebar = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={cx("install")}>
-                    <Link to="/">
-                        <MdDownloadForOffline />
+                <div className={cx("install")} ref={installButtonEL}>
+                    <Link to="/download" className={cx("install-link")}>
+                        <MdDownloadForOffline className={cx("icon")} />
                         <span>Install App</span>
                     </Link>
                 </div>

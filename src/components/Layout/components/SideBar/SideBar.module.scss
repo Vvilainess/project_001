@@ -3,16 +3,17 @@
     grid-area: sidebar;
     width: calc(var(--default-layout-sidebar-width) + 9px);
     height: calc(100vh - var(--default-layout-playback-height));
+    min-height: 0;
     background-color: var(--black);
     display: flex;
     flex-direction: column;
-    min-height: 0;
     .wrapper {
         display: flex;
         flex-direction: column;
         flex: 1;
         padding-top: 24px;
         width: 100%;
+        height: 100%;
         .brand-logo {
             display: flex;
             align-items: center;
@@ -146,6 +147,34 @@
                     &:hover {
                         color: var(--white);
                     }
+                }
+            }
+        }
+        .install {
+            height: 38px;
+            padding: 0 8px;
+            display: flex;
+            align-items: center;
+            &-link {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                color: #b3b3b3;
+                -webkit-transition-duration: .2s;
+                transition-duration: .2s;
+                -webkit-transition-property: color;
+                transition-property: color;
+                -webkit-transition-timing-function: linear;
+                transition-timing-function: linear;
+                padding: 0 16px;
+                .icon {
+                    margin-right: 12px;
+                }
+                span {
+                    font-size: 0.875rem;
+                    line-height: 1rem;
+                    text-transform: none;
+                    letter-spacing: normal;
                 }
             }
         }
