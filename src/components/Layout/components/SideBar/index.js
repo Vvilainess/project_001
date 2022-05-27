@@ -26,19 +26,28 @@ const menu = [
     },
 ];
 const Sidebar = () => {
-    const playlistEl = useRef(null);
     const sideBarEl = useRef(null);
+    const playlistEl = useRef(null);
+    const sideBarLogoEl = useRef(null);
+    const sideBarMenuEl = useRef(null);
+    const sideBarFeatEl = useRef(null);
     useEffect(() => {
-        console.log(sideBarEl);
+        playlistEl.current.maxHeight =
+            sideBarEl.current.offsetHeight -
+            sideBarLogoEl.current.offsetHeight -
+            sideBarMenuEl.current.offsetHeight -
+            sideBarFeatEl.current.offsetHeight +
+            "px";
+        console.log(playlistEl.current.maxHeight);
     }, []);
     return (
         <div className={cx("side-bar")} ref={sideBarEl}>
             <div className={cx("wrapper")}>
-                <Link to="/" className={cx("brand-logo")}>
+                <Link to="/" className={cx("brand-logo")} ref={sideBarLogoEl}>
                     <BsSpotify className={cx("icon")} />
                     <span className={cx("brand-title")}>Spotify</span>
                 </Link>
-                <div className={cx("menu")}>
+                <div className={cx("menu")} ref={sideBarMenuEl}>
                     <ul className={cx("menu-nav")}>
                         {menu.map((item, idx) => {
                             return (
@@ -55,7 +64,7 @@ const Sidebar = () => {
                         })}
                     </ul>
                 </div>
-                <div className={cx("feature")}>
+                <div className={cx("feature")} ref={sideBarFeatEl}>
                     <div className={cx("wrapper")}>
                         <Link
                             to="/collection/:id"
@@ -74,7 +83,7 @@ const Sidebar = () => {
                     </div>
                 </div>
                 <div className={cx("playlist")}>
-                    <div className={cx("wrapper")} ref={playlistEl}>
+                    <div className={cx("wrapper")} ref={playlistEl} style={{}}>
                         <Link to="/" className={cx("playlist-item")}>
                             Playlist Item
                         </Link>
