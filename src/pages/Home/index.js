@@ -7,13 +7,10 @@ const cx = className.bind(styles);
 
 const Home = () => {
     const homeSecEl = useRef(null);
-    const handleResize = () => {
-        window.onscroll = () => {
-            console.log(homeSecEl);
-        };
-    };
     useEffect(() => {
-        handleResize();
+        homeSecEl.onscroll = () => {
+            console.log("scrolled");
+        };
     }, []);
     return (
         <div className={cx("home")} ref={homeSecEl}>
@@ -22,7 +19,9 @@ const Home = () => {
                 style={{ backgroundColor: "rgb(224, 224, 224)" }}
                 className={cx("spacer")}
             ></div>
-            <section className={cx("content")}></section>
+            <section className={cx("content")}>
+                <div style={{ height: "3000px" }}></div>
+            </section>
         </div>
     );
 };

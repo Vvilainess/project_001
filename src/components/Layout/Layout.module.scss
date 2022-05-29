@@ -12,8 +12,9 @@
     .main-view {
         position: relative;
         grid-area: main-view;
-        overflow: hidden;
+        overflow-y: scroll;
         width: 100%;
+        max-height: calc(100vh - var(--default-layout-playback-height));
         display: flex;
         flex-direction: column;
         &-container {

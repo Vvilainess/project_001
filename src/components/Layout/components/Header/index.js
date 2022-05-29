@@ -24,7 +24,7 @@ const Header = ({ backgroundColor, input }) => {
                 {input ? <SearchInput /> : <></>}
                 <div className={cx("user-button")}>
                     <img
-                        src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/178979870_1537543346584459_6440505385994778302_n.jpg?stp=c7.0.40.40a_cp0_dst-jpg_p40x40&_nc_cat=100&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=N_d9-l-c4lcAX8oIhRd&_nc_ht=scontent.fhan2-4.fna&oh=00_AT_vzP8WeqFt9RrM3CVBjnGo8hC1X2x6eNmCaHTQx3Zv1g&oe=62929587"
+                        src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80"
                         alt="user-avatar"
                     />
                     <span className={cx("user-name")}>Phung Truong Giang</span>
