@@ -4,4 +4,33 @@
     height: var(--default-layout-playback-height);
     background-color: var(--background-playback);
     z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex: 1;
+        padding: 0 16px;
+        .now-playing-widget {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .now-playing-widget-container {
+                display: flex;
+                flex: 1;
+                flex-direction: row;
+                justify-content: start;
+                align-items: center;
+            }
+        }
+        .playback-controller {
+        }
+        .sound-controller {
+        }
+    }
 }
