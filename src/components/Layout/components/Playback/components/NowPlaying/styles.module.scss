@@ -1,4 +1,8 @@
 .now-playing-widget {
-    display: flex;
-    flex: 1;
+    min-width: 180px;
+    width: 30%;
+    .image-container {
+        width: 64px;
+        height: 64px;
+    }
 }
