@@ -6,7 +6,8 @@
     --secondary: #b3b3b3;
     --black: #000;
     --white: #fff;
-    --text-color: #161823;
+    --text-color: #fff;
+    --text-subdued: #a7a7a7;
     --header-color: #070707;
     --font-family: "Open Sans", sans-serif;
 
@@ -73,7 +74,6 @@ input,
 }
 
 a[href] {
-    color: var(--text-color);
     text-decoration: none;
 }
 

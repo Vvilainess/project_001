@@ -11,7 +11,7 @@ const NowPlaying = () => {
     const [heart, setHeart] = useState(false);
     return (
         <div className={cx("now-playing-widget")}>
-            <div className={cx("flex-center")}>
+            <div className={cx("wrapper")}>
                 <div className={cx("image-container")}>
                     <img
                         src="https://i.scdn.co/image/ab67616d000048510785b44c5a814bb1318ebc8e"
@@ -20,28 +20,17 @@ const NowPlaying = () => {
                     />
                 </div>
                 <div className={cx("track-content")}>
-                    <div
-                        className={cx(
-                            "track-title mx-3 items-center text-white font-md hover:underline transition-all duration-150"
-                        )}
-                    >
-                        Track Title
-                    </div>
-                    <div className="flex flex-1 flex-row">
+                    <div className={cx("track-title")}>
                         <span>
-                            <Link
-                                to=""
-                                className="text-[#b3b3b3] hover:text-white text-xs hover:underline transition-all duration-150"
-                            >
-                                Artist1,
+                            <Link to="" className={cx("track-link")}>
+                                Track Title
                             </Link>
                         </span>
+                    </div>
+                    <div className={cx("track-artist")}>
                         <span>
-                            <Link
-                                to=""
-                                className="text-[#b3b3b3] hover:text-white text-xs hover:underline transition-all duration-150"
-                            >
-                                Artist2
+                            <Link to="" className={cx("artist-link")}>
+                                Artist1,
                             </Link>
                         </span>
                     </div>
