@@ -1,28 +1,14 @@
-.now-playing-widget {
-    min-width: 180px;
-    width: 30%;
-    .wrapper {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        display: -webkit-box;
-        display: -ms-flexbox;
+.wrapper {
+    flex: 1 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .now-playing-widget {
         display: flex;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        justify-content: flex-start;
-        position: relative;
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-        -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.3, 0, 0, 1);
-        transition: -webkit-transform 0.25s cubic-bezier(0.3, 0, 0, 1);
-        transition: transform 0.25s cubic-bezier(0.3, 0, 0, 1);
-        transition: transform 0.25s cubic-bezier(0.3, 0, 0, 1),
-            -webkit-transform 0.25s cubic-bezier(0.3, 0, 0, 1);
+        justify-content: center;
+        align-items: center;
+        min-width: 180px;
+        flex: 1;
         .image-container {
             width: 64px;
             height: 64px;
@@ -30,13 +16,16 @@
         .track-content {
             display: flex;
             justify-content: flex-start;
-            align-items: center;
-            flex-direction: row;
+            align-items: flex-start;
+            flex-direction: column;
+            margin: 0 14px;
+            flex: 1;
             .track-title {
                 font-size: 0.875rem;
                 line-height: 1rem;
                 text-transform: none;
                 letter-spacing: normal;
+                text-align: left;
                 .track-link {
                     color: var(--text-color);
                     &:hover {
@@ -45,15 +34,62 @@
                 }
             }
             .track-artist {
+                text-align: left;
                 font-size: 0.6875rem;
                 line-height: 1rem;
                 text-transform: none;
                 letter-spacing: normal;
                 .artist-link {
                     color: var(--text-subdued);
+                    transition: all 200ms ease-in;
+                    -webkit-transition: all 200ms ease-in;
+                    -moz-transition: all 200ms ease-in;
+                    -ms-transition: all 200ms ease-in;
+                    -o-transition: all 200ms ease-in;
                     &:hover {
+                        color: var(--text-color);
                         text-decoration: underline;
                     }
+                }
+            }
+        }
+        .control-button {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background-color: transparent;
+            &-heart {
+                color: hsla(0, 0%, 100%, 0.7);
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                align-items: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                .icon {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+            &-vision {
+                color: hsla(0, 0%, 100%, 0.7);
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                align-items: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                .icon {
+                    font-size: 16px;
+                    font-weight: 700;
                 }
             }
         }
