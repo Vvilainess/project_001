@@ -61,6 +61,15 @@
             -ms-border-radius: 28px;
             -o-border-radius: 28px;
             background-color: rgba(0, 0, 0, 0.7);
+            transition: all ease-in-out 150ms;
+            -webkit-transition: all ease-in-out 150ms;
+            -moz-transition: all ease-in-out 150ms;
+            -ms-transition: all ease-in-out 150ms;
+            -o-transition: all ease-in-out 150ms;
+            cursor: pointer;
+            &:hover {
+                background-color: #282828;
+            }
             img {
                 height: 28px;
                 width: 28px;

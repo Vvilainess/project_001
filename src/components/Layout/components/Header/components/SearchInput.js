@@ -11,18 +11,27 @@ const SearchInput = () => {
     return (
         <div className={cx("form-wrapper")}>
             <form action="#" autoComplete="off" className={cx("form")}>
-                <input
-                    value={inputValue}
-                    onChange={(e) => {
-                        setInputValue(e.target.value);
-                    }}
-                    type="text"
-                    name="search"
-                    placeholder="Artists, songs, or podcasts"
-                    className={cx("form-input")}
-                />
-                <AiOutlineSearch className={cx("search-icon")} />
-                {inputValue && <IoMdClose className={cx("close-button")} />}
+                <div>
+                    <input
+                        value={inputValue}
+                        onChange={(e) => {
+                            setInputValue(e.target.value);
+                        }}
+                        type="text"
+                        name="search"
+                        placeholder="Artists, songs, or podcasts"
+                        className={cx("form-input")}
+                    />
+                    <AiOutlineSearch className={cx("search-icon")} />
+                    {inputValue && (
+                        <IoMdClose
+                            className={cx("close-button")}
+                            onClick={() => {
+                                setInputValue("");
+                            }}
+                        />
+                    )}
+                </div>
                 <div className=""></div>
             </form>
         </div>
